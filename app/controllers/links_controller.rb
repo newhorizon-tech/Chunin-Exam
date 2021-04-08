@@ -10,7 +10,9 @@ class LinksController < ApplicationController
     render @link
   end
 
-  def show
+  def short_redirect
+   @link = Link.find_by(short_url: params[:short_url])
+   redirect_to @link.full_url
   end
 
   private

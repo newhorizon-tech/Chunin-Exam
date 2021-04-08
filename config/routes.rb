@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'links#index'
 
   resources :links
+
+  get '/:short_url', to: "links#short_redirect"
 end
