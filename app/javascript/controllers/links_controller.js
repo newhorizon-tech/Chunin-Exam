@@ -12,6 +12,7 @@ export default class extends Controller {
     const [data, status, xhr] = event.detail
     console.log(data, status, xhr)
     this.outputTarget.innerHTML = xhr.response;
+    this.outputTarget.style.display = "block";
     this.inputTarget.value = '';
   }
 }
