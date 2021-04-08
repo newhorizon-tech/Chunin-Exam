@@ -1,1 +1,17 @@
-<h1> Shorten URLs </h1>
+<h1>
+  Shorten URLs
+</h1>
+
+<div data-controller="links">
+
+  <%= render @links %>
+
+  <%= form_with(model: Link.new, local: false, html: { data: { type:"html", action: 'ajax:success->links#display' }} ) do |form| %>
+    <%= form.text_field :full_url, data: { target: 'links.input'}, placeholder: 'http://example.com' %>
+    <%= form.submit style: 'display: block' %>
+  <% end %>
+
+  <div data-links-target="output">
+  </div>
+
+</div>
