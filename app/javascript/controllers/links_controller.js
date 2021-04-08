@@ -11,7 +11,7 @@ export default class extends Controller {
   display(event) {
     const [data, status, xhr] = event.detail
     console.log(data, status, xhr)
-    this.outputTarget.textContent = "Your shortened url:" + xhr.response;
-    this.inputTarget.value = 'Modified';
+    this.outputTarget.innerHTML = xhr.response;
+    this.inputTarget.value = '';
   }
 }

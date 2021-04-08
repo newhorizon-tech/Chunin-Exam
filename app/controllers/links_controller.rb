@@ -5,6 +5,7 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
+    @link.short_url = generate_url()
     @link.save!
     render @link
   end
