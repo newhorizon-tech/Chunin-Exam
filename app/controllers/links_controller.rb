@@ -12,6 +12,8 @@ class LinksController < ApplicationController
 
   def short_redirect
    @redirect_link = Link.find_by(short_url: params[:short_url])
+   @visit = Visit.new(link: @redirect_link)
+   @visit.save
    redirect_to @redirect_link.full_url
   end
 

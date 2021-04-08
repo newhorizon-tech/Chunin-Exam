@@ -15,14 +15,17 @@ ActiveRecord::Schema.define(version: 2021_04_07_105744) do
   create_table "links", force: :cascade do |t|
     t.string "short_url"
     t.string "full_url"
+    t.integer "visits_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "visits", force: :cascade do |t|
+    t.integer "link_id"
     t.string "browser"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["link_id"], name: "index_visits_on_link_id"
   end
 
 end
