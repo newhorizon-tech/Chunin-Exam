@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_105744) do
   create_table "visits", force: :cascade do |t|
     t.integer "link_id"
     t.string "browser"
+    t.string "os"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["link_id"], name: "index_visits_on_link_id"
